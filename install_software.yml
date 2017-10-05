@@ -1,0 +1,11 @@
+---
+- hosts: testserver
+  tasks:
+    - name: Installiere Midnight Commander
+      yum: pkg=mc state=installed update_cache=true
+#      notify:
+#        - start nginx
+
+#  handlers:
+#    - name: start nginx
+#      service: name=nginx state=started

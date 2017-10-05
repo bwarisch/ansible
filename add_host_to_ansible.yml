@@ -1,0 +1,8 @@
+---
+- hosts: ansible
+  sudo: no
+
+  tasks:
+
+  - name: enable haproxy
+    lineinfile: dest=/etc/ansible/hosts line="10.21.253.153"

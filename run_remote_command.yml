@@ -1,0 +1,13 @@
+---
+- hosts: testserver
+  sudo: no
+
+  tasks:
+
+#  - name: enable haproxy
+#    lineinfile: dest=/tmp/test.txt regexp="^ENABLED" line="ENABLED=1"
+#    lineinfile: dest=/tmp/test2.txt regexp="^DISABLED" line="DISABLED=0"
+#    lineinfile: dest=/etc/hosts regexp="^127\.0\.0\.1" line="128.0.0.1 localhost" owner=root group=root mode=0644
+#    copy: src=/tmp/test.txt dest=/root/test.txt owner=root group=root mode=0644
+
+  - script: /scripte/keygen_onserver.sh

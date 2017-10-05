@@ -1,0 +1,28 @@
+---
+- name: Erstkonfiguration von Linux Servern
+  hosts: testserver
+  tasks:
+    - name: Installiere Midnight Commander
+      yum: pkg=mc state=installed update_cache=true
+    - name: Installiere NFS Utils
+      yum: pkg=nfs-utils state=installed update_cache=true
+    - name: Installiere Nano Editor
+      yum: pkg=nano state=installed update_cache=true
+    - name: Installiere Netzwerk Tools
+      yum: pkg=net-tools state=installed update_cache=true
+    - name: Übertragen des scripts
+      copy: src=/scripte/keygen_onserver.sh dest=/scripte/keygen_onserver.sh mode=0777
+    - name: Ausführen des scripts
+      shell: /scripte/keygen_onserver.sh
+#       shell: "mount -t nfs nfs-server.lab2015.de:/keys /mnt"
+#       shell: "cp /root/.ssh/id_rsa /mnt/$servername.rsa"
+#       shell: "umount /mnt"
+#  tasks:
+#    - name: Installiere Nano Editor
+#      yum: pkg=nano state=installed update_cache=true
+#    - name: Installiere Netzwerk Tools
+#      yum: pkg=net-tools state=installed update_cache=true
+
+
+
+
